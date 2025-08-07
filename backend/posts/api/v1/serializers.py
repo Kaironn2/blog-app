@@ -28,7 +28,7 @@ class PostSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['slug', 'author']
 
-    def create(self, validated_data: PostInputSchema):
+    def create(self, validated_data):
         validated_data['author'] = self.context['request'].user
         post = Post.objects.create(**validated_data)
         return post
