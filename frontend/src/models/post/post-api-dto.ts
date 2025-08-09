@@ -1,7 +1,7 @@
 import { AuthorApiDto } from "../author/author-api-dto";
 import { CategoryApiDto } from "../category/category-api-dto";
 
-export type PostApiDto = {
+export type PostReadApiDto = {
   id: string;
   title: string;
   slug: string | null;
