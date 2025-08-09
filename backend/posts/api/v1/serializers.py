@@ -19,12 +19,15 @@ class PostSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'title',
+            'excerpt',
             'slug',
             'content',
             'cover_image',
             'author',
             'category',
             'category_id',
+            'created_at',
+            'updated_at',
         ]
         read_only_fields = ['slug', 'author']
 
