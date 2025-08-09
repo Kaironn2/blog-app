@@ -29,3 +29,5 @@ export class ApiPostRepository implements PostRepository {
     }
   }
 }
+
+export const postRepository = new ApiPostRepository()

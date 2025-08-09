@@ -1,7 +1,7 @@
 'use client'
 
 import { PostModel } from "@/models/post/post-model";
-import { ApiPostRepository } from "@/repositories/post/api-post-repository";
+import { ApiPostRepository, postRepository } from "@/repositories/post/api-post-repository";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -10,8 +10,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const repo = new ApiPostRepository();
-    repo
+    postRepository
       .findAll()
       .then((data) => {
         setPosts(data);
