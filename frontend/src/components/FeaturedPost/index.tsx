@@ -2,6 +2,7 @@ import { PostModel } from '@/models/post/post-model';
 import { PostCoverImage } from '../PostCoverImage';
 import { PostHeading } from '../PostHeading';
 import { apiRoutes } from '@/config/api';
+import { formatDatetime, formatRelativeDate } from '@/helpers/format-datetime';
 
 type FeaturedPostProps = {
   post: PostModel;
@@ -19,8 +20,12 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
       />
 
       <div className="flex flex-col gap-4 sm:justify-center">
-        <time dateTime="2025-08-16" className="text-slate-600 text-sm/tight">
-          16/08/2025 04:54
+        <time
+          dateTime="2025-08-16"
+          className="text-slate-600 text-sm/tight"
+          title={formatRelativeDate(post.createdAt)}
+        >
+          {formatDatetime(post.createdAt)}
         </time>
 
         <PostHeading url={postLink} as="h1">
