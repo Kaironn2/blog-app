@@ -103,6 +103,10 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+ASSETS_DIR = BASE_DIR.parent / 'assets'
+ASSETS_DATA_DIR = ASSETS_DIR / 'data'
+ASSETS_IMGS_DIR = ASSETS_DIR / 'imgs'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
