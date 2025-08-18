@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Novo arco de Jujutsu Kaisen é anunciado para 2025",
+    "content": "A produtora de Jujutsu Kaisen confirmou que o próximo arco do anime será lançado em 2025. O novo arco promete trazer batalhas ainda mais intensas e aprofundar a história de personagens queridos pelos fãs. A expectativa é de que a qualidade da animação mantenha o alto nível apresentado nas temporadas anteriores.",
+    "excerpt": "Jujutsu Kaisen terá um novo arco em 2025, trazendo batalhas épicas e desenvolvimento de personagens.",
+    "category": "anime",
+    "cover_image": "jujutsu-kaisen.jpg"
+  },
+  {
+    "title": "Elden Ring recebe expansão Shadow of the Erdtree",
+    "content": "A FromSoftware lançou oficialmente a aguardada expansão de Elden Ring, chamada 'Shadow of the Erdtree'. A DLC traz novas áreas, inimigos inéditos e chefes desafiadores que prometem testar até os jogadores mais experientes. A comunidade já celebra a qualidade do conteúdo extra.",
+    "excerpt": "Shadow of the Erdtree expande o universo de Elden Ring com novos inimigos, áreas e desafios.",
+    "category": "game",
+    "cover_image": "elden-ring-shadow-of-the-erdtree.jpg"
+  },
+  {
+    "title": "One Piece atinge marco histórico de episódios",
+    "content": "O anime One Piece ultrapassou a marca de 1100 episódios exibidos. A obra de Eiichiro Oda segue sendo um fenômeno global, com fãs acompanhando a jornada de Luffy e sua tripulação em busca do One Piece. O sucesso se mantém após mais de duas décadas de exibição.",
+    "excerpt": "One Piece alcança 1100 episódios e continua sendo um dos maiores sucessos do anime mundial.",
+    "category": "anime",
+    "cover_image": "one-piece.jpg"
+  },
+  {
+    "title": "Final Fantasy XVI ganha atualização gratuita",
+    "content": "A Square Enix anunciou uma grande atualização gratuita para Final Fantasy XVI, trazendo novos modos de jogo e ajustes no balanceamento de combate. A atualização também inclui melhorias gráficas e correções de bugs relatados pela comunidade.",
+    "excerpt": "Final Fantasy XVI recebe atualização gratuita com novos modos e melhorias gráficas.",
+    "category": "game",
+    "cover_image": "final-fantasy-xvi.jpeg"
+  },
+  {
+    "title": "Solo Leveling estreia com grande sucesso",
+    "content": "A adaptação em anime de Solo Leveling estreou e rapidamente conquistou os fãs. Com uma animação fluida e fiel ao manhwa original, a série já figura entre os animes mais assistidos da temporada. A expectativa é que se torne um dos destaques do ano.",
+    "excerpt": "Solo Leveling estreia em anime e conquista fãs pela fidelidade e animação de alta qualidade.",
+    "category": "anime",
+    "cover_image": "solo-leveling.jpeg"
+  },
+  {
+    "title": "Nintendo anuncia novo jogo de The Legend of Zelda",
+    "content": "Durante o último Nintendo Direct, foi revelado um novo jogo da franquia The Legend of Zelda. Embora poucos detalhes tenham sido divulgados, o teaser mostrou um mundo vasto e mecânicas inéditas que prometem revolucionar a jogabilidade da série.",
+    "excerpt": "Novo título de The Legend of Zelda é anunciado, trazendo promessas de inovação na franquia.",
+    "category": "game",
+    "cover_image": "the-legend-of-zelda.jpg"
+  },
+  {
+    "title": "Attack on Titan tem episódio final exibido",
+    "content": "O episódio final de Attack on Titan foi exibido, marcando o encerramento de uma das sagas mais impactantes do mundo dos animes. A conclusão dividiu opiniões entre os fãs, mas consolidou a obra como um dos grandes marcos da última década.",
+    "excerpt": "Attack on Titan chega ao fim e deixa legado marcante na história dos animes.",
+    "category": "anime",
+    "cover_image": "attack-on-titan.jpg"
+  }
+]
