@@ -14,7 +14,7 @@ class Post(models.Model):
     excerpt = models.CharField(max_length=255)
     cover_image = models.ImageField(upload_to='posts/covers/%Y/%m/%d')
     slug = models.SlugField(unique=True, blank=True, null=True)
-    published = models.BooleanField(default=False)
+    published = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
