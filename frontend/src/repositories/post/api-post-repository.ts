@@ -1,7 +1,6 @@
 import { PostModel } from '@/models/post/post-model';
 import { PostRepository } from './post-repository';
 import { PostReadApiDto } from '@/models/post/post-api-dto';
-import { apiRoutes } from '@/config/api';
 import { mountPostsUrl, PostQueryParams } from '@/config/mount-posts-url';
 import axios from 'axios';
 
@@ -30,6 +29,10 @@ export class ApiPostRepository implements PostRepository {
 
   async findAllPublished(): Promise<PostModel[]> {
     return this.findAll({ published: true });
+  }
+
+  async findBySlug(slug: string): Promise<PostModel> {
+    return;
   }
 }
 
