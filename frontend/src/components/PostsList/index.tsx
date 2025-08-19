@@ -1,14 +1,13 @@
 import { PostModel } from '@/models/post/post-model';
-import { postRepository } from '@/repositories/post/api-post-repository';
 import { PostCoverImage } from '../PostCoverImage';
 import { apiRoutes } from '@/config/api';
-import { PostHeading } from '../PostHeading';
 import clsx from 'clsx';
-import { formatDatetime, formatRelativeDate } from '@/helpers/format-datetime';
+import { PostSumary } from '../PostSummary';
+import { findAllPublicPosts } from '@/lib/post/queries';
 
 export async function PostsList() {
-  const posts: PostModel[] = (await postRepository.findAll()).slice(1);
-
+  const posts = (await findAllPublicPosts()).slice(1);
+  console.log(`POSTS -> ${posts}`);
   return (
     <div
       className={clsx(
@@ -28,21 +27,13 @@ export async function PostsList() {
               src={post.coverImageUrl}
             />
 
-            <div className="flex flex-col gap-4 sm:justify-center">
-              <time
-                dateTime={post.createdAt}
-                className="text-slate-600 text-sm/tight"
-                title={formatRelativeDate(post.createdAt)}
-              >
-                {formatDatetime(post.createdAt)}
-              </time>
-
-              <PostHeading url={postLink} as="h2">
-                {post.title}
-              </PostHeading>
-
-              <p className="text-justify">{post.excerpt}</p>
-            </div>
+            <PostSumary
+              postLink={postLink}
+              postHeading="h2"
+              createdAt={post.createdAt}
+              excerpt={post.excerpt}
+              title={post.title}
+            />
           </div>
         );
       })}
