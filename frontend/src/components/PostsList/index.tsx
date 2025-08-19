@@ -4,6 +4,7 @@ import { PostCoverImage } from '../PostCoverImage';
 import { apiRoutes } from '@/config/api';
 import { PostHeading } from '../PostHeading';
 import clsx from 'clsx';
+import { formatDatetime, formatRelativeDate } from '@/helpers/format-datetime';
 
 export async function PostsList() {
   const posts: PostModel[] = (await postRepository.findAll()).slice(1);
@@ -31,15 +32,9 @@ export async function PostsList() {
               <time
                 dateTime={post.createdAt}
                 className="text-slate-600 text-sm/tight"
+                title={formatRelativeDate(post.createdAt)}
               >
-                {new Date(post.createdAt).toLocaleString('pt-BR', {
-                  day: '2-digit',
-                  month: '2-digit',
-                  year: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                  hour12: false,
-                })}
+                {formatDatetime(post.createdAt)}
               </time>
 
               <PostHeading url={postLink} as="h2">
