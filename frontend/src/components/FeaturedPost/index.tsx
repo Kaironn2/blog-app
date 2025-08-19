@@ -1,14 +1,11 @@
 import { PostModel } from '@/models/post/post-model';
 import { PostCoverImage } from '../PostCoverImage';
-import { PostHeading } from '../PostHeading';
 import { apiRoutes } from '@/config/api';
-import { formatDatetime, formatRelativeDate } from '@/helpers/format-datetime';
+import { PostSumary } from '../PostSummary';
+import { findAllPublicPosts } from '@/lib/post/queries';
 
-type FeaturedPostProps = {
-  post: PostModel;
-};
-
-export function FeaturedPost({ post }: FeaturedPostProps) {
+export async function FeaturedPost() {
+  const post = (await findAllPublicPosts())[0];
   const postLink = `${apiRoutes.posts}/${post.slug}`;
 
   return (
@@ -19,21 +16,13 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
         src={post.coverImageUrl}
       />
 
-      <div className="flex flex-col gap-4 sm:justify-center">
-        <time
-          dateTime="2025-08-16"
-          className="text-slate-600 text-sm/tight"
-          title={formatRelativeDate(post.createdAt)}
-        >
-          {formatDatetime(post.createdAt)}
-        </time>
-
-        <PostHeading url={postLink} as="h1">
-          {post.title}
-        </PostHeading>
-
-        <p className="text-justify">{post.excerpt}</p>
-      </div>
+      <PostSumary
+        postLink={postLink}
+        postHeading="h2"
+        createdAt={post.createdAt}
+        excerpt={post.excerpt}
+        title={post.title}
+      />
     </section>
   );
 }
