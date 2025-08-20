@@ -3,10 +3,10 @@ import { PostCoverImage } from '../PostCoverImage';
 import { apiRoutes } from '@/config/api';
 import clsx from 'clsx';
 import { PostSumary } from '../PostSummary';
-import { findAllPublicPosts } from '@/lib/post/queries';
+import { findAllPublicPostsCached } from '@/lib/post/queries';
 
 export async function PostsList() {
-  const posts = (await findAllPublicPosts()).slice(1);
+  const posts = (await findAllPublicPostsCached()).slice(1);
   console.log(`POSTS -> ${posts}`);
   return (
     <div
@@ -17,7 +17,7 @@ export async function PostsList() {
       )}
     >
       {posts.map((post) => {
-        const postLink = `${apiRoutes.posts}/${post.slug}`;
+        const postLink = `post/${post.slug}`;
 
         return (
           <div className="flex flex-col gap-8" key={post.id}>
