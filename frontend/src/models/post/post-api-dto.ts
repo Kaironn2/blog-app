@@ -1,10 +1,10 @@
-import { AuthorApiDto } from "../author/author-api-dto";
-import { CategoryApiDto } from "../category/category-api-dto";
+import { AuthorApiDto } from '../author/author-api-dto';
+import { CategoryApiDto } from '../category/category-api-dto';
 
 export type PostReadApiDto = {
   id: string;
   title: string;
-  slug: string | null;
+  slug: string;
   excerpt: string;
   content: string;
   cover_image: string;

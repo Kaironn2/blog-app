@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 type PostHeadingProps = {
   children: React.ReactNode;
-  url: string;
+  url?: string;
   as?: 'h1' | 'h2';
 };
 
@@ -22,9 +22,13 @@ export function PostHeading({
 
   return (
     <TitleTag className={classes}>
-      <Link className="hover:text-blue-500 transition" href={url}>
-        {children}
-      </Link>
+      {url ? (
+        <Link className="group-hover:text-blue-600 transition" href={url}>
+          {children}
+        </Link>
+      ) : (
+        children
+      )}
     </TitleTag>
   );
 }

@@ -1,9 +1,9 @@
 import { PostModel } from '@/models/post/post-model';
 import { PostRepository } from './post-repository';
 import { PostReadApiDto } from '@/models/post/post-api-dto';
-import { apiRoutes } from '@/config/api';
 import { mountPostsUrl, PostQueryParams } from '@/config/mount-posts-url';
 import axios from 'axios';
+import { apiRoutes } from '@/config/api';
 
 export class ApiPostRepository implements PostRepository {
   private mapPost(postFromApi: PostReadApiDto): PostModel {
@@ -30,6 +30,16 @@ export class ApiPostRepository implements PostRepository {
 
   async findAllPublished(): Promise<PostModel[]> {
     return this.findAll({ published: true });
+  }
+
+  async findBySlug(slug: string): Promise<PostModel> {
+    const url = `${apiRoutes.posts}${slug}`;
+    console.log(url);
+    const { data } = await axios.get<PostReadApiDto>(url);
+
+    if (!data) throw new Error('Post não encontrado para esse slug');
+
+    return this.mapPost(data);
   }
 }
 
