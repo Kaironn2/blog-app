@@ -10,11 +10,14 @@ export default function NotFoundPage() {
   const h1Classes = clsx('text-7xl/tight mb-4 font-extrabold');
 
   return (
-    <div className={mainDivClasses}>
-      <div>
-        <h1 className={h1Classes}>404</h1>
-        <p>Erro 404 - A página que você está tentando acessar não existe.</p>
+    <>
+      <title>BlogHub | Página não encontrada</title>
+      <div className={mainDivClasses}>
+        <div>
+          <h1 className={h1Classes}>404</h1>
+          <p>Erro 404 - A página que você está tentando acessar não existe.</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
