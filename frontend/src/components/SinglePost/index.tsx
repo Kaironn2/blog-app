@@ -4,6 +4,7 @@ import { SpinLoader } from '../SpinLoader';
 import Image from 'next/image';
 import { PostHeading } from '../PostHeading';
 import { PostDate } from '../PostDate';
+import { SafeMarkdown } from '../SafeMarkdown';
 
 type SinglePostProps = {
   slug: string;
@@ -21,6 +22,7 @@ export async function SinglePost({ slug }: SinglePostProps) {
             width={1200}
             height={720}
             alt={post.title}
+            priority
           />
 
           <PostHeading>{post.title}</PostHeading>
@@ -34,7 +36,7 @@ export async function SinglePost({ slug }: SinglePostProps) {
           {post.excerpt}
         </p>
 
-        <div>{post.content}</div>
+        <SafeMarkdown markdown={post.content} />
       </article>
     </Suspense>
   );
