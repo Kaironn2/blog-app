@@ -9,7 +9,7 @@ type PostSlugPageProps = {
 export async function generateMetadata({
   params,
 }: PostSlugPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const post = await findPostBySlugCached(slug);
   return {
     title: post.title,
@@ -18,7 +18,7 @@ export async function generateMetadata({
 }
 
 export default async function PostSlugPage({ params }: PostSlugPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const post = await findPostBySlugCached(slug);
 
